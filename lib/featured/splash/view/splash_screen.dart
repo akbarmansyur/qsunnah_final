@@ -24,7 +24,7 @@ class SplashScreen extends GetView<SplashController> {
                 'Quotesunnah.com © ${DateTime.now().year.toString()}',
               ),
             ),
-            Center(
+            const Center(
               child: Text(
                 'Nyanyot developer\nbuild version (demo non_stable 0.1.2)',
                 textAlign: TextAlign.center,

@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout(
@@ -16,7 +16,17 @@ class ResponsiveLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isAndroid || Platform.isIOS || Platform.isFuchsia) {
+    if (kIsWeb) {
+      return OrientationBuilder(
+        builder: (context, orientation) {
+          if (orientation == Orientation.portrait) {
+            return mobileDevice;
+          } else {
+            return landscapeDevice;
+          }
+        },
+      );
+    } else if (Platform.isAndroid || Platform.isIOS) {
       return OrientationBuilder(
         builder: (context, orientation) {
           if (orientation == Orientation.portrait) {

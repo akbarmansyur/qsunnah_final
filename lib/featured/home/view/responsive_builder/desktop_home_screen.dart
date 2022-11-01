@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:qsunnah_final/featured/section/content_section.dart';
 import 'package:qsunnah_final/featured/section/footer_section.dart';
 import 'package:qsunnah_final/featured/section/header_menu_section.dart';
@@ -14,17 +12,17 @@ class DeskTopHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        HeaderSection(),
-        HeaderMenuSection(),
+        const HeaderSection(),
+        const HeaderMenuSection(),
         Expanded(
           child: Row(
-            children: [
+            children: const [
               Expanded(child: ContentSection()),
               SizedBox(width: 300, child: SidebarSection()),
             ],
           ),
         ),
-        FooterSection(),
+        const FooterSection(),
       ],
     );
   }
